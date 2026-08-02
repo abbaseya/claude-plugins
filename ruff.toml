@@ -1,0 +1,14 @@
+# Same defect-oriented ruleset as the plugin repos, so a contributor moving
+# between them meets one standard rather than three.
+#
+# %-formatting is the house style and is not a defect, so UP031/UP032 stay off —
+# a gate that reports non-problems is a gate people stop reading.
+
+line-length = 100
+target-version = "py39"
+
+exclude = ["**/__pycache__", "**/.ruff_cache"]
+
+[lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501", "UP031", "UP032"]
