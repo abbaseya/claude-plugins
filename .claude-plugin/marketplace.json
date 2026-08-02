@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "abbaseya",
+  "owner": {
+    "name": "Ahmed Abbas"
+  },
+  "metadata": {
+    "description": "Personal Claude Code plugins by Ahmed Abbas.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "my-vault",
+      "source": {
+        "source": "github",
+        "repo": "abbaseya/claude-vault-skill"
+      },
+      "description": "Turn your Claude Code sessions into an interlinked Obsidian vault. Captures the decisions, reasoning and context buried in your transcripts as atomic notes, each anchored to a machine-verified verbatim quote. Nothing is uploaded; nothing is written without you asking.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Ahmed Abbas"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/abbaseya/claude-vault-skill",
+      "repository": "https://github.com/abbaseya/claude-vault-skill",
+      "keywords": [
+        "obsidian",
+        "knowledge-management",
+        "notes",
+        "memory",
+        "zettelkasten"
+      ],
+      "category": "productivity",
+      "tags": [
+        "obsidian",
+        "notes",
+        "memory",
+        "knowledge"
+      ]
+    },
+    {
+      "name": "my-voice",
+      "source": {
+        "source": "github",
+        "repo": "abbaseya/claude-voice-skill"
+      },
+      "description": "Draft in your own voice. Forces Claude to build a structured model of you-as-writer from your own writing samples before drafting, then critique the draft as you would. Corpus-driven, with a deterministic typography backstop.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Ahmed Abbas"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/abbaseya/claude-voice-skill",
+      "repository": "https://github.com/abbaseya/claude-voice-skill",
+      "keywords": [
+        "writing",
+        "voice",
+        "style",
+        "authoring",
+        "content"
+      ],
+      "category": "productivity",
+      "tags": [
+        "writing",
+        "voice",
+        "authoring"
+      ]
+    }
+  ]
+}

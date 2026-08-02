@@ -1,0 +1,52 @@
+name: Tests
+
+# A malformed catalog does not fail for the person who published it. It fails for
+# whoever runs /plugin install, with an error they cannot fix. So the catalog is
+# validated on every PR, before it can reach main.
+#
+# Structural checks block. Repo reachability does not: GitHub answers unauthenticated
+# HEAD requests from CI with 403/503 often enough that gating on it would produce a
+# red build nobody caused — and a gate that fails for reasons nobody caused is a gate
+# that gets disabled in week one.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  catalog:
+    name: Catalog is valid
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: marketplace.json is well-formed and installable
+        run: python bin/check-catalog.py
+
+      - name: Checker's own test suite
+        run: python -m unittest discover -s bin/tests -v
+
+      - name: Plugin repos are reachable (report only)
+        continue-on-error: true
+        run: python bin/check-catalog.py --online
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install ruff
+        run: python -m pip install --quiet ruff
+      - name: Lint (blocking — this repo is small and has no debt to grandfather)
+        run: ruff check .
