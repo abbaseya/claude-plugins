@@ -16,7 +16,7 @@
         "repo": "abbaseya/claude-vault-skill"
       },
       "description": "Turn your Claude Code sessions into an interlinked Obsidian vault. Captures the decisions, reasoning and context buried in your transcripts as atomic notes, each anchored to a machine-verified verbatim quote. Nothing is uploaded; nothing is written without you asking.",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "author": {
         "name": "Ahmed Abbas"
       },
