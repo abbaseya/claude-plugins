@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Personal Claude Code plugins by Ahmed Abbas.",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
   "plugins": [
     {
@@ -16,7 +16,7 @@
         "repo": "abbaseya/claude-vault-skill"
       },
       "description": "Turn your Claude Code sessions into an interlinked Obsidian vault. Captures the decisions, reasoning and context buried in your transcripts as atomic notes, each anchored to a machine-verified verbatim quote. Nothing is uploaded; nothing is written without you asking.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "Ahmed Abbas"
       },
